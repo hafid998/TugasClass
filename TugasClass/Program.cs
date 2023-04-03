@@ -1,27 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-public class Mobil
+namespace classobj
 {
-    //properties
-    public string Warna { get; set; }
-    public int JumlahPintu { get; set; }
-    public string Merk { get; set; }
-    public string Model { get; set; }
-    public int TahunKeluar { get; set; }
+    public class Program
+    {
+        public static void Main()
+        {
+            ClassMobil mobil1 = new ClassMobil();
 
-    //method
-    public void Gas(int kecepatan)
-    {
-        Console.WriteLine("Mobil {0} berjalan dengan kecepatan {1}", Model, kecepatan);
-    }
-    public void Klakson(string suara)
-    {
-        Console.WriteLine("suara klakson {0}", suara);
+            mobil1.Warna = "Putih";
+            mobil1.JumlahPintu = 4;
+            mobil1.Merk = "Honda";
+            mobil1.Model = "Brio";
+            mobil1.TahunKeluar = 2019;
+
+            mobil1.Gas(180);
+            mobil1.Klakson("tiiin tiiiin titititin");
+            mobil1.Tampilkaninfo();
+
+
+
+          
+        }
     }
 
-    public void Tampilkaninfo()
-    {
-        Console.WriteLine("Mobil saya berwarna {0}, merk {1}, model {2}, keluaran tahun {3}, dengan jumlah pintu {4}", Warna, Merk, Model, TahunKeluar, JumlahPintu);
-    }
+
 
 }
